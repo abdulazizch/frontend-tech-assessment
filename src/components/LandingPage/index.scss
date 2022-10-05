@@ -1,9 +1,24 @@
+$lg : 992px;
+$sm : 482px;
+@mixin responsive($query) {
+    @media ( max-width: $query ) {
+        @content;
+    }
+}
 .landing-page{
     padding: 30px 160px 30px 170px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    @include responsive($lg) {
+        padding: 30px 100px 30px 100px;
+        display: grid;
+        height: 100vh;
+        grid-template-areas:
+        'textArea'
+        'cardArea';
+    }
      .card-area{
         width: 50%;
 
@@ -21,10 +36,20 @@
                 object-position: center;
             }
         }
+        @include responsive($lg) {
+            width: 100%;
+            grid-area: cardArea;
+        }
      }       
     .text-area{
-        width: 50%;
+        width: 40%;
         text-align: right;
+        padding: 0;
+        @include responsive($lg) {
+            width: 100%;
+            grid-area: textArea;
+            text-align: center;
+        }
 
         h2{
 
