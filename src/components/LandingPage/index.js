@@ -22,12 +22,15 @@ const Landing = () =>{
                         <p>
                             Easily host and share events with your friends across any social media.
                         </p>
-
                         <NavLink exact ="true" className="btn-create-event" to="/create">
                         🎉 Create my event
                         </NavLink>
+                        
                     </div>
                 </div>
+                <NavLink exact ="true" className="btn-create-event tab-btn" to="/create">
+                        🎉 Create my event
+                </NavLink>
             </div>
         </>
     )
